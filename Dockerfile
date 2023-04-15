@@ -11,7 +11,7 @@ ENV SHELL=/bin/bash
 
 # Install unzip + rclone (support for remote filesystem)
 RUN sudo apt update && sudo apt install unzip -y
-RUN sudo apt install -y build-essential
+RUN sudo apt install -y build-essential wget
 RUN curl https://rclone.org/install.sh | sudo bash
 
 # Copy rclone tasks to /tmp, to potentially be used
