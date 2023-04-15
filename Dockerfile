@@ -29,6 +29,11 @@ RUN sudo chown -R coder:coder /home/coder/.local
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
 RUN sudo apt install -y build-essential
+ADD https://github.com/quarto-dev/quarto-cli/releases/download/v1.3.326/quarto-1.3.326-linux-amd64.tar.gz
+RUN mkdir -p ~/opt && tar -C ~/opt -xzf quarto-1.3.326-linux-amd64.tar.gz && \
+mkdir -p ~/bin && \
+ln -s ~/opt/quarto-1.3.326/bin/quarto ~/bin/quarto
+ENV PATH=$PATH:~/bin
 
 # Copy files:
 # COPY deploy-container/myTool /home/coder/myTool
