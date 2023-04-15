@@ -39,6 +39,7 @@ ENV PATH=$PATH:~/bin
 # Copy files:
 # COPY deploy-container/myTool /home/coder/myTool
 
+RUN code-server --install-extension quarto.quarto
 
 RUN curl -fsSL https://d2lang.com/install.sh | sh -s --
 
