@@ -28,9 +28,11 @@ RUN sudo chown -R coder:coder /home/coder/.local
 
 # Install apt packages:
 # RUN sudo apt-get install -y ubuntu-make
+RUN sudo apt install -y build-essential
 
 # Copy files:
 # COPY deploy-container/myTool /home/coder/myTool
+
 
 RUN curl -fsSL https://d2lang.com/install.sh | sh -s --
 
